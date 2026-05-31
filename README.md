@@ -38,3 +38,17 @@ g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out
     - **2_two_triangles_ex_1.cpp** - *Draws 2 triangles next to each other using glDrawArrays by adding more vertices to the vertex data*
     - **2_two_triangles_ex_2.cpp** - *Creates the same 2 triangles using two different VAOs and VBOs for their data*
     - **2_two_triangles_ex_3.cpp_** - *Creates two shader programs where the second program uses a different fragment shader that outputs the color yellow; draws both triangles again where one outputs the color yellow*
+
+## Screenshots
+
+![hello window](screenshots/1_hello_window.png "hello window")
+
+![hello triangle](screenshots/2_hello_triangle.png "hello triangle")
+
+![hello triangle indexed](screenshots/2_hello_triangle_indexed.png "hello triangle indexed")
+
+![chapter 2 exercise 1 - two triangles](screenshots/2_two_triangles_ex_1.png "chapter 2 exercise 1 - two triangles")
+
+![chapter 2 exercise 2 - two triangles](screenshots/2_two_triangles_ex_2.png "chapter 2 exercise 2 - two triangles")
+
+![chapter 2 exercise 3 - two triangles](screenshots/2_two_triangles_ex_3.png "chapter 2 exercise 3 - two triangles")
