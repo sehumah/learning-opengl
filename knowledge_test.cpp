@@ -87,51 +87,47 @@ int main () {
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-
     // setup vertex data
     float vertices[] = {
-        // leftmost triangle (vertices work!)
-        //   /|
-        //  / |
-        //  \ |
-        //   \|
-        -0.5f,  0.0f, 0.0f,  // left
-        -0.3f,  0.5f, 0.0f,  // top
-        -0.3f, -0.5f, 0.0f,  // bottom
-        
-        // left triangle of the rectangle
-        // |\
-        // | \
-        // |__\
-        -0.3f,  0.5f, 0.0f,  // top left (duplicate of previous top vertices)
-        0.3f, -0.5f, 0.0f,  // bottom right (duplicate of previous bottom right vertices)
-        -0.3f,  -0.5f, 0.0f,  // bottom left
-        
-        // // right triangle of the rectangle (vertices work!)
-        // // \--|
-        // //  \ |
-        // //   \|
-        -0.3f,  0.5f, 0.0f,  // top left (duplicate of previous top vertices)
-         0.3f,  0.5f, 0.0f,  // top right
-         0.3f, -0.5f, 0.0f,  // bottom (duplicate of previous bottom right vertices)
+        // my vertices
+        // -0.5f,  0.0f, 0.0f,  // 0 - left point
+        // -0.3f,  0.5f, 0.0f,  // 1 - top left
+        // -0.3f, -0.5f, 0.0f,  // 2 - bottom left
+        //  0.3f,  0.5f, 0.0f,  // 3 - top right
+        //  0.3f, -0.5f, 0.0f,  // 4 - bottom right
+        //  0.5f,  0.0f, 0.0f,  // 5 - right point
 
-        // rightmost triangle (vertices work!)
-        // |\
-        // | \
-        // | /
-        // |/
-        0.3f,  0.5f, 0.0f,  // top
-        0.3f, -0.5f, 0.0f,  // bottom
-        0.5f,  0.0f, 0.0f,  // right
+        // vertices from tutorial (https://youtu.be/69f6W-vO67E?list=PLtqEJYsBa5uoYFuKT9cjfaH39ibLdxzqc)
+		 0.3f,  0.5f, 0.0f,  // top right
+		 0.5f,  0.0f, 0.0f,  // middle right
+		 0.3f, -0.5f, 0.0f,  // bottom right
+		-0.3f, -0.5f, 0.0f,  // bottom left
+		-0.5f,  0.0f, 0.0f,  // middle left
+		-0.3f,  0.5f, 0.0f   // top left 
     };
 
-    // print to verify vertex count (expecting 12)
-    std::cout << "Vertices: " << sizeof(vertices) / (3 * sizeof(float)) << '\n';
+    unsigned int indices[] = {
+        // my indices
+        // 0, 1, 3,
+        // 0, 2, 3,
+        // 2, 3, 5,
+        // 3, 4, 5,
+
+        // indices from tutorial (https://youtu.be/69f6W-vO67E?list=PLtqEJYsBa5uoYFuKT9cjfaH39ibLdxzqc)
+		0, 5, 4, // first triangle
+		0, 4, 1, // second triangle
+		1, 4, 3, // third triangle
+		1, 3, 2,  // forth triangle
+    };
+
+    // print to verify vertex count (expecting: 12, actual: 11. not sure why)
+    // std::cout << "Vertices: " << sizeof(vertices) / (3 * sizeof(float)) << '\n';
 
     // generate VAOs & VBOs
-    unsigned int vao, vbo;
-    glGenVertexArrays(1, &vao);
-    glGenBuffers(1, &vbo);
+    unsigned int VAO, VBO, EBO;
+    glGenVertexArrays(1, &VAO);
+    glGenBuffers(1, &VBO);
+    glGenBuffers(1, &EBO);
     
     /**
      * bind VAOs
@@ -141,15 +137,24 @@ int main () {
      * enable vertex attribe arrays
      */
 
-    glBindVertexArray(vao);
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    // bind buffers
+    glBindVertexArray(VAO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    
+    // copy data into buffers
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+    
+    // tell OpenGl how to interpret buffer data & enable the vertex array
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(float) * 3, (void*)0);
     glEnableVertexAttribArray(0);
+    
     glBindVertexArray(0);  // unbind the VAO for later use
+    glBindBuffer(GL_ARRAY_BUFFER, 0);  // unbind the VBO since its data is now in the EBO
 
     // switch to wireframe mode
-    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     //////////////////////////////////////////////////////// END ////////////////////////////////////////////////////////
     while (!glfwWindowShouldClose(window)) {
         processInput(window);
@@ -160,16 +165,17 @@ int main () {
 
         // use the shader program, bind the vertex array object and render the triangle
         glUseProgram(shaderProgram);
-        glBindVertexArray(vao);
-        glDrawArrays(GL_TRIANGLES, 0, 12);
-        glBindVertexArray(0);  // unbind the VAO after using it
+        glBindVertexArray(VAO);
+        glDrawElements(GL_TRIANGLES, 12, GL_UNSIGNED_INT, 0);
+        // glBindVertexArray(0);  // unbind the VAO after using it
 
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-    glDeleteVertexArrays(1, &vao);
-    glDeleteBuffers(1, &vbo);
     glDeleteProgram(shaderProgram);
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
+    glDeleteBuffers(1, &EBO);
     glfwTerminate();
     return 0;
 }
