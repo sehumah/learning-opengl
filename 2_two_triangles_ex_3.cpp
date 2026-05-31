@@ -69,7 +69,7 @@ int main() {
     glGetShaderiv(firstFragmentShader, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(firstFragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION FAILED: " << infoLog << std::endl;
+        std::cout << "ERROR::SHADER::FRAGMENT::FIRST::COMPILATION FAILED: " << infoLog << std::endl;
     }
 
     // setup 2nd fragment shader
@@ -84,7 +84,7 @@ int main() {
     glGetShaderiv(secondFragmentShader, GL_COMPILE_STATUS, &success);
     if (!success) {
         glGetShaderInfoLog(secondFragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR::SHADER::FRAGMENT::COMPILATION FAILED: " << infoLog << std::endl;
+        std::cout << "ERROR::SHADER::FRAGMENT::SECOND::COMPILATION FAILED: " << infoLog << std::endl;
     }
     
 
