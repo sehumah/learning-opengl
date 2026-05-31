@@ -52,3 +52,5 @@ g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out
 ![chapter 2 exercise 2 - two triangles](screenshots/2_two_triangles_ex_2.png "chapter 2 exercise 2 - two triangles")
 
 ![chapter 2 exercise 3 - two triangles](screenshots/2_two_triangles_ex_3.png "chapter 2 exercise 3 - two triangles")
+
+![knowledge test](screenshots/knowledge_test%20-%20hexagon.png "knowledge test - hexagon")
