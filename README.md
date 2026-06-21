@@ -15,15 +15,15 @@ g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
 
 1. Compile code into an executable file:
 
-```bash
-g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out
-```
+    ```bash
+    g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out
+    ```
 
 2. Run the executable file with:
 
-```bash
-./a.out
-```
+    ```bash
+    ./a.out
+    ```
 
 ## Learning Journey
 
