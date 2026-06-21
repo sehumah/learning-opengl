@@ -117,7 +117,7 @@ int main () {
 		0, 5, 4, // first triangle
 		0, 4, 1, // second triangle
 		1, 4, 3, // third triangle
-		1, 3, 2,  // forth triangle
+		1, 3, 2,  // fourth triangle
     };
 
     // print to verify vertex count (expecting: 12, actual: 11. not sure why)
