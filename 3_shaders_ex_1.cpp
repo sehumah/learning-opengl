@@ -38,16 +38,23 @@ int main() {
     ///////////////////////////////////////////////////////////////////// START /////////////////////////////////////////////////////////////////////
 
     // load our custom shader class
-    Shader shader { "3_shader.vs", "3_shader.fs" };
+    Shader shader { "3_shaders_ex_1.vs", "3_shader.fs" };
 
     // vertex coordinate & color data
     // my solution was to use the same vertex data from before but with inverted y-coordinates instead 
     // but another correct solution is to invert the y-coordinates in the vertex shader source code
+    // float vertices[] = {
+    //     // coordinates        // color
+    //     -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,  // top left
+    //      0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 0.0f,  // top right
+    //      0.0f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,  // bottom
+    // };
+
     float vertices[] = {
-        // coordinates        // color
-        -0.5f,  0.5f, 0.0f,   1.0f, 0.0f, 0.0f,  // top left
-         0.5f,  0.5f, 0.0f,   0.0f, 1.0f, 0.0f,  // top right
-         0.0f, -0.5f, 0.0f,   0.0f, 0.0f, 1.0f,  // bottom
+        // coordinates        // colors
+        -0.5f, -0.5f, 0.0f,   1.0f, 0.0f, 0.0f,  // bottom left
+         0.5f, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,  // bottom right
+         0.0f,  0.5f, 0.0f,   0.0f, 0.0f, 1.0f,  // top
     };
 
     // configure VAO & VBO
