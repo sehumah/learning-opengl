@@ -5,6 +5,6 @@ layout (location = 1) in vec3 aColor;
 out vec3 ourColor;
 
 void main () {
-    gl_Position = vec4(aPos.x, -aPos.y, aPos.z, 1.0);
+    gl_Position = vec4(aPos.x, -aPos.y, aPos.z, 1.0);  // add - to the y-coordinate to invert all y-coordinates
     ourColor = aColor;
 }
