@@ -75,3 +75,4 @@ g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
 ![chapter 3 - shader uniforms](screenshots/3_shaders_2_uniforms.gif "chapter 3 - shader uniforms")
 ![chapter 3 - shader fragment interpolation](screenshots/3_shaders_3_fragment_interpolation.png "chapter 3 - shader fragment interpolation")
 ![chapter 3 - shader fragment interpolation with custom shader class](screenshots/3_shaders_4_shader_class_fragment_interpolation.png "chapter 3 - shader fragment interpolation with custom shader class")
+![chapter 3 - exercise 1 upside down triangle](screenshots/3_shaders_ex_1.png "chapter 3 - exercise 1 upside down triangle")
