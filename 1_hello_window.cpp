@@ -5,7 +5,7 @@
 
 /**
  * 
- * Compile and execute OpenGL prgram with: g++ 1_hello_window.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+ * Compile and execute OpenGL prgram with: g++ glad/src/glad.c 1_hello_window.cpp -o a.out -ldl -lglfw; ./a.out
  * 
  */
 

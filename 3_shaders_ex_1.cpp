@@ -7,6 +7,9 @@
 /**
  *  Exercise 1:
  *  Adjust the vertex shader so that the triangle is upside down:
+ * 
+ * 
+ * Compile and run program with:  g++ glad/src/glad.c 3_shaders_ex_1.cpp -o a.out -ldl -lglfw; ./a.out
  */
 
 

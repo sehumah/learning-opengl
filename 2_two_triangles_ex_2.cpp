@@ -7,7 +7,7 @@
  * 
  * Challenge: Create 2 triangles using two different VAOs and VBOs for their data.
  * 
- * Compile and execute program with: g++ 2_two_triangles_ex_2.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+ * Compile and execute program with: g++ glad/src/glad.c 2_two_triangles_ex_2.cpp -o a.out -ldl -lglfw; ./a.out
  * 
  */
 

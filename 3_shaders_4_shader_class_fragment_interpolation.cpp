@@ -15,7 +15,7 @@
  *  This program demonstrates the use of a custom shader class to read shaders from disk, 
  *  compile and link them, check for errors and is easy to use.
  *  
- *  Compile source code with  : g++ 3_shaders_4_shader_class_fragment_interpolation.cpp glad/src/glad.c -ldl -lglfw -o a.out
+ *  Compile source code with  : g++ glad/src/glad.c 3_shaders_4_shader_class_fragment_interpolation.cpp -o a.out -ldl -lglfw
  *  Execute program with      : ./a.out
  */
 

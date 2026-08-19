@@ -15,7 +15,7 @@
  * In addition to the vertex coordinates data, we add color data as 3 floats to the vertices array. 
  * We assign a red, green and blue color to each of the corners of our triangle respectively.
  * 
- *  Compile source code with: g++ shaders.cpp glad/src/glad.c -ldl -lglfw -o a.out
+ *  Compile source code with: g++ glad/src/glad.c 3_shaders_3_fragment_interpolation.cpp -o a.out -ldl -lglfw
  *      Execute program with: ./a.out
  * 
  */

@@ -8,7 +8,7 @@ All these programs are written and executed on Ubuntu (Linux).
 To execute any of the programs, first ensure that you have GLFW installed, then you can compile and execute the code with:
 
 ```bash
-g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+g++ glad/src/glad.c file_name.cpp -o a.out -ldl -lglfw; ./a.out
 ```
 
 **Command breakdown:**
@@ -16,7 +16,7 @@ g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
 1. Compile code into an executable file:
 
     ```bash
-    g++ file_name.cpp glad/src/glad.c -ldl -lglfw -o a.out
+    g++ glad/src/glad.c file_name.cpp -o a.out -ldl -lglfw
     ```
 
 2. Run the executable file with:

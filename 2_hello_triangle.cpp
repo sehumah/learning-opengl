@@ -5,7 +5,7 @@
 
 /**
  * 
- * Compile and execute program with: g++ 2_hello_triangle.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+ * Compile and execute program with: g++ glad/src/glad.c 2_hello_triangle.cpp -o a.out -ldl -lglfw; ./a.out
  * 
  */
 

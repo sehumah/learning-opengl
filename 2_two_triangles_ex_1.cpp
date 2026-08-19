@@ -7,7 +7,7 @@
  * 
  * Challenge: Draw 2 triangles next to each other using glDrawArrays by adding more vertices to your data.
  * 
- * Compile and execute program with: g++ 2_two_triangles_ex_1.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+ * Compile and execute program with: g++ glad/src/glad.c 2_two_triangles_ex_1.cpp -o a.out -ldl -lglfw; ./a.out
  * 
  */
 

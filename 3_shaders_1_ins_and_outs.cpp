@@ -15,7 +15,7 @@
  * Specifically, we send output data from the vertex shader which the fragment shader takes as its input.
  * The fragment shader then uses the vertex shader's output data as its input data to color the rendered triangle.
  * ----------------------------------------------------------------------------------------------------------------
- *  Compile source code with : g++ 3_shaders_1_ins_and_outs.cpp glad/src/glad.c -ldl -lglfw -o a.out
+ *  Compile source code with : g++ glad/src/glad.c 3_shaders_1_ins_and_outs.cpp -o a.out -ldl -lglfw
  *  Execute program with     : ./a.out
  * 
  */

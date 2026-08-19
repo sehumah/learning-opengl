@@ -8,7 +8,7 @@
  * Challenge: Create two shader programs where the second program uses a different fragment shader that 
  *            outputs the color yellow; draw both triangles again where one outputs the color yellow
  * 
- * Compile and execute program with: g++ 2_two_triangles_ex_3.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+ * Compile and execute program with: g++ glad/src/glad.c 2_two_triangles_ex_3.cpp -o a.out -ldl -lglfw; ./a.out
  * 
  */
 

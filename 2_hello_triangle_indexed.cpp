@@ -5,7 +5,7 @@
 
 /**
  * 
- * Compile and execute program with: g++ 2_hello_triangle_indexed.cpp glad/src/glad.c -ldl -lglfw -o a.out; ./a.out
+ * Compile and execute program with: g++ glad/src/glad.c 2_hello_triangle_indexed.cpp -o a.out -ldl -lglfw; ./a.out
  * 
  * This program builds on 2_hello_triangle.cpp and uses an Element Buffer Object (EBO) to draw a rectangle using 2 triangles and index drawing.
  * 

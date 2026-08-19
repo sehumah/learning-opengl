@@ -19,7 +19,7 @@
  * is unique per shader program object, and can be accessed from any shader at any stage in the shader program. 
  * Second, whatever you set the uniform value to, uniforms will keep their values until they're either reset or updated.
  * 
- *  Compile source code with : g++ 3_shaders_2_uniforms.cpp glad/src/glad.c -ldl -lglfw -o a.out
+ *  Compile source code with : g++ glad/src/glad.c 3_shaders_2_uniforms.cpp -o a.out -ldl -lglfw
  *      Execute program with : ./a.out
  * 
  */
