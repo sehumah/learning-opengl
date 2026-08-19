@@ -100,6 +100,11 @@ int main() {
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
+    
+    // free up resources
+    shader.deleteProgram();
+    glDeleteVertexArrays(1, &VAO);
+    glDeleteBuffers(1, &VBO);
     glfwTerminate();
     return 0;
 }
